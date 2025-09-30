@@ -56,5 +56,11 @@
       <DependentUpon>ClientView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoLib\DemoLib.csproj">
+      <Project>{56f8405b-b458-48db-ba8e-cb8ec167372e}</Project>
+      <Name>DemoLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
