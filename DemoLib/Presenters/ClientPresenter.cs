@@ -15,10 +15,13 @@ namespace DemoLib.Presenters
 
             List<Client> allClients = model_.ReadAllClients();
 
-            for(int i = 0; i < allClients.Count; ++i)
+            if (views_.Count > 0)
             {
-                Client client = allClients[i];
-                views[i].ShowClientInfo(client);
+                for (int i = 0; i < allClients.Count; ++i)
+                {
+                    Client client = allClients[i];
+                    views[i].ShowClientInfo(client);
+                }
             }
         }
     }

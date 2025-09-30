@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.clientView1 = new ClientCard.ClientView();
+            this.ClientsLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // clientView1
+            // ClientsLayout
             // 
-            this.clientView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.clientView1.Location = new System.Drawing.Point(12, 12);
-            this.clientView1.Name = "clientView1";
-            this.clientView1.Size = new System.Drawing.Size(455, 246);
-            this.clientView1.TabIndex = 0;
+            this.ClientsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClientsLayout.Location = new System.Drawing.Point(0, 0);
+            this.ClientsLayout.Name = "ClientsLayout";
+            this.ClientsLayout.Size = new System.Drawing.Size(800, 450);
+            this.ClientsLayout.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.clientView1);
+            this.Controls.Add(this.ClientsLayout);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Управление клиентами ОАО \"Цемент-Строй\"";
@@ -57,7 +57,7 @@
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private ClientCard.ClientView clientView1;
+        private System.Windows.Forms.FlowLayoutPanel ClientsLayout;
     }
 }
 
