@@ -4,7 +4,9 @@ namespace DemoLib.Models
 {
     public class MemoryClientsModel : IClientsModel
     {
-        public List<Client> ReadAllClients()
+        private List<Client> allClients_ = new List<Client>();  
+
+        public MemoryClientsModel()
         {
             Client c1 = new Client(1);
             c1.Name = "Просто Валера";
@@ -21,7 +23,17 @@ namespace DemoLib.Models
             c2.Mail = "777@sobaka.ru";
             c2.ImagePath = "../../../Resources/img/prsteyka.jpg";
 
-            return new List<Client>() { c1, c2 };
+            allClients_.Add(c1);
+            allClients_.Add(c2);
+        }
+        public List<Client> ReadAllClients()
+        {
+            return allClients_;
+        }
+
+        public int GetClientsCount()
+        {
+            return allClients_.Count;
         }
     }
 }
