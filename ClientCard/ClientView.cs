@@ -30,11 +30,6 @@ namespace ClientCard
             AvatarBox.Load(client.ImagePath);
         }
 
-        private void ClientView_Load(object sender, System.EventArgs e)
-        {
-            SelectedClient?.Invoke(client_);
-        }
-
         private void ClientView_MouseEnter(object sender, System.EventArgs e)
         {
             this.BackColor = enteringColor;
@@ -43,6 +38,11 @@ namespace ClientCard
         private void ClientView_MouseLeave(object sender, System.EventArgs e)
         {
             this.BackColor = defaultColor;
+        }
+
+        private void ClientView_MouseClick(object sender, MouseEventArgs e)
+        {
+            SelectedClient?.Invoke(client_);
         }
     }
 }
