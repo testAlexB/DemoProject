@@ -25,7 +25,7 @@ namespace DemoLib.Models
             {
                 NameProduct = "Саморезы",
                 Count = 100,
-                Price = 10000,
+                Price = 100,
                 SaleDate = new System.DateTime(2025, 10, 2)
             });
 

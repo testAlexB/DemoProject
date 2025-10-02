@@ -39,6 +39,7 @@ namespace DemoProject
 
             ClientOrdersForm ordersForm = new ClientOrdersForm();
             ordersForm.Text = "Заказы клиента " + obj.Name;
+            ordersForm.SetOrder(obj.order);
             ordersForm.ShowDialog();
         }
     }
