@@ -96,6 +96,9 @@
             this.Controls.Add(this.TitleLabel);
             this.Name = "ClientView";
             this.Size = new System.Drawing.Size(455, 246);
+            this.Load += new System.EventHandler(this.ClientView_Load);
+            this.MouseEnter += new System.EventHandler(this.ClientView_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.ClientView_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.AvatarBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
