@@ -24,5 +24,25 @@ namespace DemoLib.Presenters
                 }
             }
         }
+
+        public void SearchClientsByPartialName(string searchText)
+        {
+            foreach (IClientView view in views_)
+            {
+                Client client = view.GetClientInfo();
+
+                string clientNameToLower = client.Name.ToLower();
+                string text = searchText.ToLower();
+
+                if(clientNameToLower.Contains(text))
+                {
+                    view.ShowView();
+                }
+                else
+                {
+                    view.HideView();
+                }
+            }
+        }
     }
 }

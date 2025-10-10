@@ -42,5 +42,12 @@ namespace DemoProject
             ordersForm.SetOrder(obj.order);
             ordersForm.ShowDialog();
         }
+
+        private void SearchByClientNameTextBox_TextChanged(object sender, System.EventArgs e)
+        {
+            string searchingText = SearchByClientNameTextBox.Text;
+            
+            presenter_.SearchClientsByPartialName(searchingText);
+        }
     }
 }

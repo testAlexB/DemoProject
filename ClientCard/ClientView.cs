@@ -30,6 +30,20 @@ namespace ClientCard
             AvatarBox.Load(client.ImagePath);
         }
 
+        public Client GetClientInfo()
+        {
+            return client_;
+        }
+
+        public void ShowView()
+        {
+            Visible = true;
+        }
+        public void HideView()
+        {
+            Visible = false;
+        }
+
         private void ClientView_MouseEnter(object sender, System.EventArgs e)
         {
             this.BackColor = enteringColor;
