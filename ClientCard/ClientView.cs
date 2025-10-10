@@ -17,6 +17,12 @@ namespace ClientCard
         public ClientView()
         {
             InitializeComponent();
+
+            foreach (Control control in this.Controls)
+            {
+                control.MouseEnter += ClientView_MouseEnter;
+                control.MouseLeave += ClientView_MouseLeave;
+            }
         }
 
         public void ShowClientInfo(Client client)
