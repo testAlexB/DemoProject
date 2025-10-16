@@ -23,5 +23,10 @@ namespace DemoLib.Models
 
             return logins;
         }
+
+        public bool Authorization(string login, string password)
+        {
+
+        }
     }
 }

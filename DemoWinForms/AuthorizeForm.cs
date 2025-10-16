@@ -1,12 +1,5 @@
 ﻿using DemoLib.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DemoProject
@@ -27,6 +20,21 @@ namespace DemoProject
         private void LoginComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RunButton_Click(object sender, EventArgs e)
+        {
+            string login = LoginComboBox.SelectedItem.ToString();
+            string password = PasswordTextBox.Text;
+
+            if (model_.Authorization(login, password))
+            {
+                MessageBox.Show("Вы молодец, авторизованы!");
+            }
+            else
+            {
+                MessageBox.Show("Вы не молодец, неверный пароль");
+            }
         }
     }
 }

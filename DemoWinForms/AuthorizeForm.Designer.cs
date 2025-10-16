@@ -81,6 +81,7 @@
             this.RunButton.TabIndex = 4;
             this.RunButton.Text = "Войти";
             this.RunButton.UseVisualStyleBackColor = false;
+            this.RunButton.Click += new System.EventHandler(this.RunButton_Click);
             // 
             // PreviewButton
             // 
