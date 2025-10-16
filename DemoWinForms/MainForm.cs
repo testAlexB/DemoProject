@@ -39,10 +39,21 @@ namespace DemoProject
                 return;
             }
 
-            ClientOrdersForm ordersForm = new ClientOrdersForm();
-            ordersForm.Text = "Заказы клиента " + obj.Name;
-            ordersForm.SetOrder(obj.order);
-            ordersForm.ShowDialog();
+            if (isLowRoleUser())
+            {
+                MessageBox.Show("У Вас не хватает прав, чтобы посмотреть заказы.\n" +
+                                "Обратитесь, пожалуйста, к администратору",
+                                "Сообщение",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+            else
+            {
+                ClientOrdersForm ordersForm = new ClientOrdersForm();
+                ordersForm.Text = "Заказы клиента " + obj.Name;
+                ordersForm.SetOrder(obj.order);
+                ordersForm.ShowDialog();
+            }
         }
 
         private void SearchByClientNameTextBox_TextChanged(object sender, System.EventArgs e)
@@ -57,17 +68,25 @@ namespace DemoProject
             Application.Exit();
         }
 
-        private void MainForm_Load(object sender, System.EventArgs e)
+        private bool isLowRoleUser()
         {
             /// currentUser_ == null - это гость
-            if(currentUser_.Role == UserRole.Client || currentUser_ == null)
+            return currentUser_.Role == UserRole.Client || currentUser_ == null;
+        }
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+            if(isLowRoleUser())
             {
                 this.SearchByClientNameTextBox.Enabled = false;
                 this.SearchByNameLabel.Text = "Поиск по клиенту Вам недоступен";
                 this.SearchByNameLabel.ForeColor = System.Drawing.Color.Red;
             }
 
-            Text = this.Text + " - " + currentUser_.Login;
+            if (currentUser_ != null)
+            {
+                Text = this.Text + " - " + currentUser_.Login;
+            }
         }
     }
 }
