@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Models\FakeUserRepository.cs" />
     <Compile Include="Models\IClientsModel.cs" />
     <Compile Include="Models\IUsersRepository.cs" />
     <Compile Include="Models\MemoryClientsModel.cs" />
