@@ -29,7 +29,10 @@ namespace DemoProject
 
             if (model_.Authorization(login, password))
             {
-                MessageBox.Show("Вы молодец, авторизованы!");
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+               /// уточнить
+                Hide();
             }
             else
             {
