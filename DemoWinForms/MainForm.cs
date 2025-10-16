@@ -49,5 +49,10 @@ namespace DemoProject
             
             presenter_.SearchClientsByPartialName(searchingText);
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
