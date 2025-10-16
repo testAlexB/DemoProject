@@ -26,7 +26,13 @@ namespace DemoLib.Models
 
         public bool Authorization(string login, string password)
         {
+            User user = usersRepository_.GetUserByLogin(login);
+            if(user == null)
+            {
+                    return false;
+            }
 
+            return user.Password == password;
         }
     }
 }
