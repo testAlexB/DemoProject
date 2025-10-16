@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoLib.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,32 +13,18 @@ namespace DemoProject
 {
     public partial class AuthorizeForm : Form
     {
+        private UsersModel model_ = new UsersModel();
         public AuthorizeForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AuthorizeForm_Load(object sender, EventArgs e)
         {
-
+            LoginComboBox.DataSource = model_.GetAllLogins();
         }
 
         private void LoginComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

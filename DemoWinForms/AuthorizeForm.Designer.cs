@@ -43,7 +43,6 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(139, 20);
             this.PasswordTextBox.TabIndex = 0;
-            this.PasswordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // LoginComboBox
             // 
@@ -62,7 +61,6 @@
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Логин:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -72,7 +70,6 @@
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Пароль:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // RunButton
             // 
