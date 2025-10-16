@@ -32,7 +32,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.ClientsLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.SearchByNameLabel = new System.Windows.Forms.ToolStripLabel();
             this.SearchByClientNameTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
+            this.SearchByNameLabel,
             this.SearchByClientNameTextBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -58,11 +58,11 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripLabel1
+            // SearchByNameLabel
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(148, 22);
-            this.toolStripLabel1.Text = "Поиск по имени клиента:";
+            this.SearchByNameLabel.Name = "SearchByNameLabel";
+            this.SearchByNameLabel.Size = new System.Drawing.Size(148, 22);
+            this.SearchByNameLabel.Text = "Поиск по имени клиента:";
             // 
             // SearchByClientNameTextBox
             // 
@@ -83,6 +83,7 @@
             this.Name = "MainForm";
             this.Text = "Управление клиентами ОАО \"Цемент-Строй\"";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -95,7 +96,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.FlowLayoutPanel ClientsLayout;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel SearchByNameLabel;
         private System.Windows.Forms.ToolStripTextBox SearchByClientNameTextBox;
     }
 }

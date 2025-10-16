@@ -10,9 +10,11 @@ namespace DemoProject
 {
     public partial class MainForm : Form
     {
+        private User currentUser_ = null;
         private ClientPresenter presenter_;
-        public MainForm()
+        public MainForm(User user)
         {
+            currentUser_ = user;
             InitializeComponent();
 
             MemoryClientsModel model = new MemoryClientsModel();
@@ -53,6 +55,19 @@ namespace DemoProject
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+            /// currentUser_ == null - это гость
+            if(currentUser_.Role == UserRole.Client || currentUser_ == null)
+            {
+                this.SearchByClientNameTextBox.Enabled = false;
+                this.SearchByNameLabel.Text = "Поиск по клиенту Вам недоступен";
+                this.SearchByNameLabel.ForeColor = System.Drawing.Color.Red;
+            }
+
+            Text = this.Text + " - " + currentUser_.Login;
         }
     }
 }

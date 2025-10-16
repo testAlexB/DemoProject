@@ -1,4 +1,5 @@
-﻿using DemoLib.Models;
+﻿using DemoLib;
+using DemoLib.Models;
 using System;
 using System.Windows.Forms;
 
@@ -27,9 +28,10 @@ namespace DemoProject
             string login = LoginComboBox.SelectedItem.ToString();
             string password = PasswordTextBox.Text;
 
-            if (model_.Authorization(login, password))
+            User user = model_.Authorization(login, password);
+            if (user != null)
             {
-                MainForm mainForm = new MainForm();
+                MainForm mainForm = new MainForm(user);
                 mainForm.Show();
                /// уточнить
                 Hide();

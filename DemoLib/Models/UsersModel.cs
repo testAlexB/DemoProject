@@ -24,15 +24,20 @@ namespace DemoLib.Models
             return logins;
         }
 
-        public bool Authorization(string login, string password)
+        public User Authorization(string login, string password)
         {
             User user = usersRepository_.GetUserByLogin(login);
             if(user == null)
             {
-                    return false;
+                return null;
             }
 
-            return user.Password == password;
+            if(user.Password == password)
+            {
+                return user;
+            }
+
+            return null;
         }
     }
 }
