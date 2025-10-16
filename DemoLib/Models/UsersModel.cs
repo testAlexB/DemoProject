@@ -13,7 +13,16 @@ namespace DemoLib.Models
 
         public List<string> GetAllLogins()
         {
+            List<User> allUsers = usersRepository_.GetAllUsers();
 
+            List<string> logins = new List<string>();
+
+            foreach (User user in allUsers)
+            {
+                logins.Add(user.Login);
+            }
+
+            return logins;
         }
     }
 }
