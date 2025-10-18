@@ -41,18 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
-    <Compile Include="Models\FakeUserRepository.cs" />
-    <Compile Include="Models\IClientsModel.cs" />
-    <Compile Include="Models\IUsersRepository.cs" />
-    <Compile Include="Models\MemoryClientsModel.cs" />
-    <Compile Include="Models\UsersModel.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderRecord.cs" />
+    <Compile Include="DataModel\Clients\Client.cs" />
+    <Compile Include="Models\Users\FakeUserRepository.cs" />
+    <Compile Include="Models\Clients\IClientsModel.cs" />
+    <Compile Include="Models\Users\IUsersRepository.cs" />
+    <Compile Include="Models\Clients\MemoryClientsModel.cs" />
+    <Compile Include="Models\Users\UsersModel.cs" />
+    <Compile Include="DataModel\Orders\Order.cs" />
+    <Compile Include="DataModel\Orders\OrderRecord.cs" />
     <Compile Include="Presenters\ClientPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserRole.cs" />
+    <Compile Include="DataModel\Users\User.cs" />
+    <Compile Include="DataModel\Users\UserRole.cs" />
     <Compile Include="Views\IClientView.cs" />
   </ItemGroup>
   <ItemGroup />
