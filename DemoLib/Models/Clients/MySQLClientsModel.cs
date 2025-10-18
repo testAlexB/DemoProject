@@ -30,7 +30,32 @@ namespace DemoLib.Models.Clients
 
         public List<Client> ReadAllClients()
         {
-            return new List<Client>();
+            List<Client> clients = new List<Client>();
+
+            string connStr = "server=localhost;user=root;database=clients_db;password=1234567;port=3307;";
+
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(connStr);
+                connection.Open();
+
+                string sql = "SELECT id, clientName, phone, mail, description, imagePath FROM clientsinfo";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+
+                command.ExecuteReader();
+
+
+
+                connection.Close();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return clients;
         }
     }
 }
