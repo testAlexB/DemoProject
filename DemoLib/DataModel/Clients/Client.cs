@@ -3,6 +3,9 @@
     public class Client
     {
         private int id_;
+
+        public int ID { get { return id_; } }
+
         public Order order = new Order();
 
         public string Name { get; set; }

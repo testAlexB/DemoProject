@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 
 namespace DemoLib.Models.Clients
 {
@@ -55,6 +58,25 @@ namespace DemoLib.Models.Clients
                             client.ImagePath = reader.GetString(5);
 
                             clients.Add(client);
+                        }
+                    }
+
+                    foreach (Client client in clients)
+                    {
+                        string orderQuery = "SELECT article, date, price, count FROM orders WHERE idclient = " + client.ID;
+                        MySqlCommand orderCommand = new MySqlCommand(orderQuery, connection);
+                        using (MySqlDataReader orderReader = orderCommand.ExecuteReader())
+                        {
+                            while (orderReader.Read())
+                            {
+                                OrderRecord orderRecord = new OrderRecord();
+                                orderRecord.NameProduct = orderReader.GetString(0);
+                                orderRecord.SaleDate = orderReader.GetDateTime(1);
+                                orderRecord.Price = orderReader.GetDouble(2);
+                                orderRecord.Count = orderReader.GetInt32(3);
+
+                                client.order.AddRecord(orderRecord);
+                            }
                         }
                     }
 
