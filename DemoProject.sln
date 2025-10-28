@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWinForms", "DemoWinForm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCard", "ClientCard\ClientCard.csproj", "{B9CD21D9-B083-4909-B4F1-7F6CF2D46FDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDemoWin", "SimpleDemoWin\SimpleDemoWin.csproj", "{066B8E32-B947-4F4C-8072-0FD4CD21C2EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B9CD21D9-B083-4909-B4F1-7F6CF2D46FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9CD21D9-B083-4909-B4F1-7F6CF2D46FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9CD21D9-B083-4909-B4F1-7F6CF2D46FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066B8E32-B947-4F4C-8072-0FD4CD21C2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066B8E32-B947-4F4C-8072-0FD4CD21C2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066B8E32-B947-4F4C-8072-0FD4CD21C2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066B8E32-B947-4F4C-8072-0FD4CD21C2EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
